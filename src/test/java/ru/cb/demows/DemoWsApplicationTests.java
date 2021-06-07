@@ -31,7 +31,7 @@ class DemoWsApplicationTests {
   @SneakyThrows
   @DisplayName("Cat REST API works correctly")
   void catRESTAPIWorksCorrectlyTest() {
-    mockMvc.perform(get("/cats"))
+    mockMvc.perform(get("/api/cats"))
         .andExpect(status().isOk())
         .andExpect(content().contentType(HAL_JSON_VALUE))
         .andExpect(jsonPath("$.page.totalElements").isNumber())
