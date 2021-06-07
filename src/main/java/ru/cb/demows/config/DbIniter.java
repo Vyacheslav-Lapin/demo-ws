@@ -15,7 +15,7 @@ public class DbIniter implements CommandLineRunner {
 
   @Override
   public void run(String... args) {
-    Arrays.stream("Васька, Мурзик, Матроскин".split(", "))
+    Arrays.stream("Васька, Мурзик, Матроскин, Барсик".split(", "))
         .map(Cat::new)
         .forEach(catDao::save);
   }
