@@ -57,8 +57,8 @@ public class Calculator {
       localPart = "DivisionInput")
   public Output division(@RequestPayload DivisionInput input) {
     val output = new ObjectFactory().createOutput();
-    val y = input.getNumber2();
     val x = input.getNumber1();
+    val y = input.getNumber2();
 
     if (y == 0) throw new IllegalArgumentException("Divisor can't be null");
 

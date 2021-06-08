@@ -10,6 +10,7 @@ import lombok.extern.jackson.Jacksonized;
 @Value
 @Jacksonized
 @Builder(toBuilder = true)
+@SuppressWarnings("ClassCanBeRecord")
 public class Geo {
 
   @JsonProperty("lat")

@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Jacksonized
 @Builder(toBuilder = true)
+@SuppressWarnings("ClassCanBeRecord")
 public class User {
   Integer id;
 
@@ -22,10 +23,10 @@ public class User {
   String userName;
 
   String email; //todo 07.06.2021: email format check
-  String phone; //todo 07.06.2021: email format check
+  String phone; //todo 07.06.2021: phone format check
 
   @JsonProperty("website")
-  String webSite; //todo 07.06.2021: email format check
+  String webSite; //todo 07.06.2021: url format check
 
   Address address;
 

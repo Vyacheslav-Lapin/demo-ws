@@ -14,8 +14,8 @@ import ru.cb.demows.dao.JsonPlaceholderUserClient;
 import ru.cb.demows.model.User;
 
 @RestController
-@RequestMapping("${spring.data.rest.base-path}/users")
 @RequiredArgsConstructor
+@RequestMapping("${spring.data.rest.base-path}/users")
 public class UserController {
 
   JsonPlaceholderUserClient userClient;
