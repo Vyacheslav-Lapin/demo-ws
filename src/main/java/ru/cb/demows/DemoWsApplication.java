@@ -29,8 +29,8 @@ public class DemoWsApplication {
     return new ServletRegistrationBean<>(messageDispatcherServlet, "/medium/ws/*");
   }
 
-  @Bean(name = "calculatorDemo")
-  public Wsdl11Definition wsdl11Definition(){
+  @Bean
+  public Wsdl11Definition calculatorDemo(){
     val simpleWsdl11Definition = new SimpleWsdl11Definition();
     simpleWsdl11Definition.setWsdl(new ClassPathResource("/wsdl/calculator.wsdl"));
     return simpleWsdl11Definition;

@@ -13,6 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
+@SuppressWarnings("unused")
 public class Calculator {
 
   @ResponsePayload
@@ -31,13 +32,18 @@ public class Calculator {
     return output;
   }
 
-  @ResponsePayload
   @PayloadRoot(
       namespace = "http://medium.com/types/calculator",
       localPart = "SubtractionInput")
+  @ResponsePayload
   public Output subtraction(@RequestPayload SubtractionInput input) {
     val output = new ObjectFactory().createOutput();
-    output.setResult(input.getNumber1() - input.getNumber2());
+
+    val x = input.getNumber1();
+    val y = input.getNumber2();
+
+    output.setResult(x - y);
+
     return output;
   }
 
@@ -46,8 +52,14 @@ public class Calculator {
       namespace = "http://medium.com/types/calculator",
       localPart = "MultiplicationInput")
   public Output multiplication(@RequestPayload MultiplicationInput input) {
+
     val output = new ObjectFactory().createOutput();
-    output.setResult(input.getNumber1() * input.getNumber2());
+
+    int x = input.getNumber1();
+    int y = input.getNumber2();
+
+    output.setResult(x * y);
+
     return output;
   }
 
@@ -56,7 +68,9 @@ public class Calculator {
       namespace = "http://medium.com/types/calculator",
       localPart = "DivisionInput")
   public Output division(@RequestPayload DivisionInput input) {
+
     val output = new ObjectFactory().createOutput();
+
     val x = input.getNumber1();
     val y = input.getNumber2();
 
